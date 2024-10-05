@@ -1,0 +1,215 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Rule styling akan diterapkan pada karakter pertama di sebuah paragraf */
+p::first-letter {
+  font-size: 32px;
+  font-weight: bold;
+  color: saddlebrown;
+}
+
+blockquote::before,
+blockquote::after {
+  content: '"';
+  font-size: 24px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+h1 {
+  font-variant: small-caps;
+}
+
+h2, h3 {
+  color: #00a2c6;
+}
+
+footer {
+  padding: 20px;
+  color: black;
+  background-color: #CBF1F5;
+  text-align: center;
+  font-weight: bold;
+}
+
+nav a {
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+  color: white;
+}
+
+nav a:hover {
+  font-weight: bold;
+}
+
+.profile header {
+  text-align: center;
+}
+
+.featured-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.profile img {
+  width: 200px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.jumbotron {
+  font-size: 20px;
+  padding: 60px;
+  background-color: #71C9CE;
+  text-align: center;
+  color: white;
+}
+
+nav li {
+  display: inline;
+  list-style-type: none;
+  margin-right: 20px;
+}
+
+nav {
+  background-color: #A6E3E9;
+  padding: 5px;
+  position: sticky;
+  top: 0;
+}
+
+main {
+  padding: 20px;
+  overflow: auto;
+  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#content {
+  flex: 3;
+}
+
+aside {
+  flex: 1;
+  padding-left: 20px;
+}
+
+header {
+  display: inline;
+}
+
+@media screen and (max-width: 1000px) {
+  main {
+    flex-direction: column;
+  }
+  
+  #content, aside {
+    width: 100%;
+  }
+}
+
+.page {
+  padding: 40px;
+   
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#splash {
+  background: #71C9CE;
+  background-repeat: repeat-y;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  animation: splash 3s ease-in;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%,0);
+}
+
+#loader:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  margin-left: -8px;
+  bottom: -170px;
+  width: 3px;
+  background: #fff;
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+  height: 200px;
+}
+
+#loader:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  margin-left: 8px;
+  bottom: -190px;
+  width: 3px;
+  background: #000;
+  background: linear-gradient(to bottom, rgba(0,0,0,.2) 0%, rgba(0,0,0,.2) 50%, rgba(0,0,0,0) 100%);
+  height: 200px;
+}
+
+#splash .anim {
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  width: 100px;
+  transform: translate(-50%,100%);
+  animation: loader 4s linear;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes loader {
+  0% {
+    transform: translate(-50%,110%);
+  }
+  30% {
+    transform: translate(-50%,50%);
+  }
+  100% {
+    transform: translate(-50%,0%);
+  }
+}
+
+@keyframes splash {
+  0% {
+    transform: translate(0%,0%);
+  }
+  50% {
+    transform: translate(0%,0%);
+  }
+  100% {
+    transform: translate(0%,-100%);
+  }
+}
